@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.6
+# Build 269223 by xbuild on Wed Jun  5 11:17:50 MDT 2013
+# Start of session at: Thu Mar 28 19:25:29 2019
+# Process ID: 30236
+# Log file: C:/Users/Ying Yu/Desktop/Mojo_v3/dualpro/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/Ying Yu/Desktop/Mojo_v3/dualpro/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {C:/Users/Ying Yu/Desktop/Mojo_v3/dualpro/pa.fromNetlist.tcl}

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Bus Id="TMDS1_POSITIVE">
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="TMDS1_NEGATIVE">
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="TMDS2_POSITIVE">
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="TMDS2_NEGATIVE">
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="LED">
+			<Port Id="7" Dir="OUT"/>
+			<Port Id="6" Dir="OUT"/>
+			<Port Id="5" Dir="OUT"/>
+			<Port Id="4" Dir="OUT"/>
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Port Id="CLOCK_IN" Dir="IN"/>
+		<Port Id="CLOCK_EXT" Dir="IN"/>
+		<Port Id="TMDS1_CLOCK_P" Dir="OUT"/>
+		<Port Id="TMDS1_CLOCK_N" Dir="OUT"/>
+		<Port Id="TMDS2_CLOCK_P" Dir="OUT"/>
+		<Port Id="TMDS2_CLOCK_N" Dir="OUT"/>
+		<Port Id="sync_in_1" Dir="IN"/>
+		<Port Id="sync_in_2" Dir="IN"/>
+		<Port Id="sync_out_1" Dir="OUT"/>
+		<Port Id="sync_out_2" Dir="OUT"/>
+		<Port Id="SCL" Dir="OUT"/>
+		<Port Id="SDA" Dir="INOUT"/>
+		<Port Id="RST_N" Dir="IN"/>
+		<Port Id="CCLK" Dir="IN"/>
+		<Port Id="SPI_MISO" Dir="OUT"/>
+		<Port Id="SPI_SS" Dir="IN"/>
+		<Port Id="SPI_MOSI" Dir="IN"/>
+		<Port Id="SPI_SCK" Dir="IN"/>
+		<DiffPair Pos="TMDS1_POSITIVE[2]" Neg="TMDS1_NEGATIVE[2]"/>
+		<DiffPair Pos="TMDS1_POSITIVE[1]" Neg="TMDS1_NEGATIVE[1]"/>
+		<DiffPair Pos="TMDS1_POSITIVE[0]" Neg="TMDS1_NEGATIVE[0]"/>
+		<DiffPair Pos="TMDS2_POSITIVE[2]" Neg="TMDS2_NEGATIVE[2]"/>
+		<DiffPair Pos="TMDS2_POSITIVE[1]" Neg="TMDS2_NEGATIVE[1]"/>
+		<DiffPair Pos="TMDS2_POSITIVE[0]" Neg="TMDS2_NEGATIVE[0]"/>
+		<DiffPair Pos="TMDS1_CLOCK_P" Neg="TMDS1_CLOCK_N"/>
+		<DiffPair Pos="TMDS2_CLOCK_P" Neg="TMDS2_CLOCK_N"/>
+	</Ifc>
+</Interface>
+

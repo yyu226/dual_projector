@@ -1,0 +1,130 @@
+--------------------------------------------------------------------------------
+Release 14.6 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf top.ucf
+
+Design file:              top.ncd
+Physical constraint file: top.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-3 (PRODUCTION 1.23 2013-06-08)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock CLOCK_IN
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+CCLK        |    4.774(R)|      SLOW  |   -1.430(R)|      FAST  |CLK_50M           |   0.000|
+RST_N       |    3.544(R)|      SLOW  |   -0.830(R)|      FAST  |CLK_50M           |   0.000|
+SPI_MOSI    |    2.510(R)|      SLOW  |   -0.835(R)|      FAST  |CLK_50M           |   0.000|
+SPI_SCK     |    2.814(R)|      SLOW  |   -1.006(R)|      FAST  |CLK_50M           |   0.000|
+SPI_SS      |    2.855(R)|      SLOW  |   -1.057(R)|      FAST  |CLK_50M           |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock CLOCK_EXT to Pad
+-----------------+-----------------+------------+-----------------+------------+------------------+--------+
+                 |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination      |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+-----------------+-----------------+------------+-----------------+------------+------------------+--------+
+TMDS1_CLOCK_N    |        10.701(R)|      SLOW  |         5.943(R)|      FAST  |clock_tmds        |   0.000|
+TMDS1_CLOCK_P    |        10.659(R)|      SLOW  |         5.927(R)|      FAST  |clock_tmds        |   0.000|
+TMDS1_NEGATIVE<0>|        10.752(R)|      SLOW  |         5.994(R)|      FAST  |clock_tmds        |   0.000|
+TMDS1_NEGATIVE<1>|        10.701(R)|      SLOW  |         5.943(R)|      FAST  |clock_tmds        |   0.000|
+TMDS1_NEGATIVE<2>|        10.752(R)|      SLOW  |         5.994(R)|      FAST  |clock_tmds        |   0.000|
+TMDS1_POSITIVE<0>|        10.710(R)|      SLOW  |         5.978(R)|      FAST  |clock_tmds        |   0.000|
+TMDS1_POSITIVE<1>|        10.659(R)|      SLOW  |         5.927(R)|      FAST  |clock_tmds        |   0.000|
+TMDS1_POSITIVE<2>|        10.710(R)|      SLOW  |         5.978(R)|      FAST  |clock_tmds        |   0.000|
+TMDS2_CLOCK_N    |        10.752(R)|      SLOW  |         5.994(R)|      FAST  |clock_tmds        |   0.000|
+TMDS2_CLOCK_P    |        10.710(R)|      SLOW  |         5.978(R)|      FAST  |clock_tmds        |   0.000|
+TMDS2_NEGATIVE<0>|        10.701(R)|      SLOW  |         5.943(R)|      FAST  |clock_tmds        |   0.000|
+TMDS2_NEGATIVE<1>|        10.752(R)|      SLOW  |         5.994(R)|      FAST  |clock_tmds        |   0.000|
+TMDS2_NEGATIVE<2>|        10.701(R)|      SLOW  |         5.943(R)|      FAST  |clock_tmds        |   0.000|
+TMDS2_POSITIVE<0>|        10.659(R)|      SLOW  |         5.927(R)|      FAST  |clock_tmds        |   0.000|
+TMDS2_POSITIVE<1>|        10.710(R)|      SLOW  |         5.978(R)|      FAST  |clock_tmds        |   0.000|
+TMDS2_POSITIVE<2>|        10.659(R)|      SLOW  |         5.927(R)|      FAST  |clock_tmds        |   0.000|
+sync_out_1       |        13.841(R)|      SLOW  |         8.085(R)|      FAST  |clock_pix         |   0.000|
+-----------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock CLOCK_IN to Pad
+------------+-----------------+------------+-----------------+------------+-----------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                       | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)      | Phase  |
+------------+-----------------+------------+-----------------+------------+-----------------------+--------+
+LED<0>      |         5.929(R)|      SLOW  |         3.401(R)|      FAST  |CLK_50M                |   0.000|
+LED<1>      |         6.069(R)|      SLOW  |         3.472(R)|      FAST  |CLK_50M                |   0.000|
+LED<2>      |         6.088(R)|      SLOW  |         3.457(R)|      FAST  |CLK_50M                |   0.000|
+LED<3>      |         6.279(R)|      SLOW  |         3.649(R)|      FAST  |CLK_50M                |   0.000|
+LED<4>      |         6.039(R)|      SLOW  |         3.476(R)|      FAST  |CLK_50M                |   0.000|
+LED<5>      |         6.223(R)|      SLOW  |         3.606(R)|      FAST  |CLK_50M                |   0.000|
+LED<6>      |         6.821(R)|      SLOW  |         3.998(R)|      FAST  |CLK_50M                |   0.000|
+LED<7>      |         6.868(R)|      SLOW  |         3.940(R)|      FAST  |CLK_50M                |   0.000|
+SCL         |        17.605(R)|      SLOW  |        12.961(R)|      FAST  |PROGAMMABLE_OSC/clk_40m|   0.000|
+SPI_MISO    |         7.194(R)|      SLOW  |         3.664(R)|      FAST  |CLK_50M                |   0.000|
+------------+-----------------+------------+-----------------+------------+-----------------------+--------+
+
+Clock sync_in_1 to Pad
+------------+-----------------+------------+-----------------+------------+-------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                   | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)  | Phase  |
+------------+-----------------+------------+-----------------+------------+-------------------+--------+
+sync_out_2  |         9.666(R)|      SLOW  |         5.429(R)|      FAST  |sync_in_1_IBUF_BUFG|   0.000|
+------------+-----------------+------------+-----------------+------------+-------------------+--------+
+
+Clock to Setup on destination clock CLOCK_EXT
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK_EXT      |    6.941|    6.344|         |         |
+CLOCK_IN       |    2.571|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CLOCK_IN
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK_IN       |    6.424|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+SPI_SS         |SPI_MISO       |    8.506|
+---------------+---------------+---------+
+
+
+Analysis completed Fri Mar 29 18:07:25 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4593 MB
+
+
+

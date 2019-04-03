@@ -1,0 +1,876 @@
+Release 14.6 Map P.68d (nt64)
+Xilinx Mapping Report File for Design 'top'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off
+-pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+Target Device  : xc6slx9
+Target Package : tqg144
+Target Speed   : -3
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Fri Mar 29 18:06:51 2019
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   69
+Slice Logic Utilization:
+  Number of Slice Registers:                   598 out of  11,440    5%
+    Number used as Flip Flops:                 589
+    Number used as Latches:                      9
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                      1,102 out of   5,720   19%
+    Number used as logic:                      578 out of   5,720   10%
+      Number using O6 output only:             395
+      Number using O5 output only:              64
+      Number using O5 and O6:                  119
+      Number used as ROM:                        0
+    Number used as Memory:                     463 out of   1,440   32%
+      Number used as Dual Port RAM:            460
+        Number using O6 output only:           404
+        Number using O5 output only:             0
+        Number using O5 and O6:                 56
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:             3
+        Number using O6 output only:             3
+        Number using O5 output only:             0
+        Number using O5 and O6:                  0
+    Number used exclusively as route-thrus:     61
+      Number with same-slice register load:     31
+      Number with same-slice carry load:        30
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   354 out of   1,430   24%
+  Number of MUXCYs used:                       236 out of   2,860    8%
+  Number of LUT Flip Flop pairs used:        1,224
+    Number with an unused Flip Flop:           707 out of   1,224   57%
+    Number with an unused LUT:                 122 out of   1,224    9%
+    Number of fully used LUT-FF pairs:         395 out of   1,224   32%
+    Number of unique control sets:              62
+    Number of slice register sites lost
+      to control set restrictions:             195 out of  11,440    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        38 out of     102   37%
+    Number of LOCed IOBs:                       30 out of      38   78%
+    IOB Master Pads:                             8
+    IOB Slave Pads:                              8
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of      32    0%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
+    Number used as BUFIO2s:                      1
+    Number used as BUFIO2_2CLKs:                 0
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             1 out of      32    3%
+    Number used as BUFIO2FBs:                    1
+    Number used as BUFIO2FB_2CLKs:               0
+  Number of BUFG/BUFGMUXs:                       8 out of      16   50%
+    Number used as BUFGs:                        8
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
+    Number used as DCMs:                         1
+    Number used as DCM_CLKGENs:                  0
+  Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
+  Number of OLOGIC2/OSERDES2s:                  16 out of     200    8%
+    Number used as OLOGIC2s:                     0
+    Number used as OSERDES2s:                   16
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             1 out of       8   12%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      16    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            1 out of       2   50%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                4.66
+
+Peak Memory Usage:  4616 MB
+Total REAL time to MAP completion:  16 secs 
+Total CPU time to MAP completion:   10 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Place:1137 - This design is not guaranteed to be routable! This design
+   contains a global buffer instance, <startbufg>, driving the net,
+   <hdmi_start>, that is driving the following (first 30) non-clock load pins.
+   < PIN: hdmi_start_goo_OR_86_o1.A4; >
+   This is not a recommended design practice in Spartan-6 due to limitations in
+   the global routing that may cause excessive delay, skew or unroutable
+   situations.  It is recommended to only use a BUFG resource to drive clock
+   loads. Please pay extra attention to the timing and routing of this path to
+   ensure the design goals are met. This is normally an ERROR but the
+   CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN <startbufg.O>
+   allowing your design to continue. This constraint disables all clock placer
+   rules related to the specified COMP.PIN.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net goo is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net SYNC_VS is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut135_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut141_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut127_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut130_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut131_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut129_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut138_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut133_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut140_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut231_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut122_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut121_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut116_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut119_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut115_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut132_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut232_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut118_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut110_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut120_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut112_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut123_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut137_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut139_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut128_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut126_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut136_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut134_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut235_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut236_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut34_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut113_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut114_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut117_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut214_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut223_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut213_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut225_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut218_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut219_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut230_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut228_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut240_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut234_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut239_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut227_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut18_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut125_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut124_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut111_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut211_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut210_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut212_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut224_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut217_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut222_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut215_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut216_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut221_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut238_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut237_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut226_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut229_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut220_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut233_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut241_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network Mram_lut501/SPO has no load.
+INFO:LIT:395 - The above info message is repeated 189 more times for the
+   following (max. 5 shown):
+   Mram_lut502/SPO,
+   Mram_lut1431/SPO,
+   Mram_lut1421/SPO,
+   Mram_lut1422/SPO,
+   Mram_lut1442/SPO
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM comp
+   PROGAMMABLE_OSC/PIXEL_CLOCK/dcm_sp_inst, consult the device Data Sheet.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 189 block(s) removed
+  10 block(s) optimized away
+ 202 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "SPI_ON_REC/four" (FF) removed.
+The signal "PROJECTOR_2/cosine<7>" is sourceless and has been removed.
+The signal "PROJECTOR_2/cosine<6>" is sourceless and has been removed.
+The signal "PROJECTOR_2/cosine<5>" is sourceless and has been removed.
+The signal "PROJECTOR_2/cosine<4>" is sourceless and has been removed.
+The signal "PROJECTOR_2/cosine<3>" is sourceless and has been removed.
+The signal "PROJECTOR_2/cosine<2>" is sourceless and has been removed.
+The signal "PROJECTOR_2/cosine<1>" is sourceless and has been removed.
+The signal "PROJECTOR_2/cosine<0>" is sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<21>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<20>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<19>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<18>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<17>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<16>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<15>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<14>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<13>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<12>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<11>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<10>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<9>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<8>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<7>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<6>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<5>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<4>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<3>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<2>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<1>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<0>" is
+sourceless and has been removed.
+The signal "PROJECTOR_2/sig00000001" is sourceless and has been removed.
+The signal "PROJECTOR_2/sig0000000b" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000023" (SFF) removed.
+  The signal "PROJECTOR_2/sig000000a5" is sourceless and has been removed.
+The signal "PROJECTOR_2/sig0000004c" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000106" (FF) removed.
+  The signal "PROJECTOR_2/sig000000a6" is sourceless and has been removed.
+The signal "PROJECTOR_2/sig00000041" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000111" (FF) removed.
+  The signal "PROJECTOR_2/sig00000062" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000151" (FF) removed.
+    The signal "PROJECTOR_2/sig000000bc" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000131" (FF) removed.
+The signal "PROJECTOR_2/sig00000040" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000112" (FF) removed.
+  The signal "PROJECTOR_2/sig00000061" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000152" (FF) removed.
+    The signal "PROJECTOR_2/sig000000bb" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000132" (FF) removed.
+The signal "PROJECTOR_2/sig0000003f" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000113" (FF) removed.
+  The signal "PROJECTOR_2/sig00000060" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000153" (FF) removed.
+    The signal "PROJECTOR_2/sig000000ba" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000133" (FF) removed.
+The signal "PROJECTOR_2/sig0000003e" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000114" (FF) removed.
+  The signal "PROJECTOR_2/sig0000005f" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000154" (FF) removed.
+    The signal "PROJECTOR_2/sig000000b9" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000134" (FF) removed.
+The signal "PROJECTOR_2/sig0000003d" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000115" (FF) removed.
+  The signal "PROJECTOR_2/sig0000005e" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000155" (FF) removed.
+    The signal "PROJECTOR_2/sig000000b8" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000135" (FF) removed.
+The signal "PROJECTOR_2/sig0000003c" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000116" (FF) removed.
+  The signal "PROJECTOR_2/sig0000005d" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000156" (FF) removed.
+    The signal "PROJECTOR_2/sig000000b7" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000136" (FF) removed.
+The signal "PROJECTOR_2/sig0000003b" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000117" (FF) removed.
+  The signal "PROJECTOR_2/sig0000005c" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000157" (FF) removed.
+    The signal "PROJECTOR_2/sig000000b6" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000137" (FF) removed.
+The signal "PROJECTOR_2/sig0000003a" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000118" (FF) removed.
+  The signal "PROJECTOR_2/sig0000005b" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000158" (FF) removed.
+    The signal "PROJECTOR_2/sig000000b5" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000138" (FF) removed.
+The signal "PROJECTOR_2/sig00000039" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000119" (FF) removed.
+  The signal "PROJECTOR_2/sig0000005a" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000159" (FF) removed.
+    The signal "PROJECTOR_2/sig000000b4" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000139" (FF) removed.
+The signal "PROJECTOR_2/sig00000038" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk0000011a" (FF) removed.
+  The signal "PROJECTOR_2/sig00000059" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk0000015a" (FF) removed.
+    The signal "PROJECTOR_2/sig000000b3" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk0000013a" (FF) removed.
+The signal "PROJECTOR_2/sig00000037" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk0000011b" (FF) removed.
+  The signal "PROJECTOR_2/sig00000058" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk0000015b" (FF) removed.
+    The signal "PROJECTOR_2/sig000000b2" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk0000013b" (FF) removed.
+The signal "PROJECTOR_2/sig00000036" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk0000011c" (FF) removed.
+  The signal "PROJECTOR_2/sig00000057" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk0000015c" (FF) removed.
+    The signal "PROJECTOR_2/sig000000b1" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk0000013c" (FF) removed.
+The signal "PROJECTOR_2/sig00000035" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk0000011d" (FF) removed.
+  The signal "PROJECTOR_2/sig00000056" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk0000015d" (FF) removed.
+    The signal "PROJECTOR_2/sig000000b0" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk0000013d" (FF) removed.
+The signal "PROJECTOR_2/sig00000034" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk0000011e" (FF) removed.
+  The signal "PROJECTOR_2/sig00000055" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk0000015e" (FF) removed.
+    The signal "PROJECTOR_2/sig000000af" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk0000013e" (FF) removed.
+The signal "PROJECTOR_2/sig00000033" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk0000011f" (FF) removed.
+  The signal "PROJECTOR_2/sig00000054" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk0000015f" (FF) removed.
+    The signal "PROJECTOR_2/sig000000ae" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk0000013f" (FF) removed.
+The signal "PROJECTOR_2/sig00000032" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000120" (FF) removed.
+  The signal "PROJECTOR_2/sig00000053" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000160" (FF) removed.
+    The signal "PROJECTOR_2/sig000000ad" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000140" (FF) removed.
+The signal "PROJECTOR_2/sig00000031" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000121" (FF) removed.
+  The signal "PROJECTOR_2/sig00000052" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000161" (FF) removed.
+    The signal "PROJECTOR_2/sig000000ac" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000141" (FF) removed.
+The signal "PROJECTOR_2/sig00000030" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000122" (FF) removed.
+  The signal "PROJECTOR_2/sig00000051" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000162" (FF) removed.
+    The signal "PROJECTOR_2/sig000000ab" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000142" (FF) removed.
+The signal "PROJECTOR_2/sig0000002f" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000123" (FF) removed.
+  The signal "PROJECTOR_2/sig00000050" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000163" (FF) removed.
+    The signal "PROJECTOR_2/sig000000aa" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000143" (FF) removed.
+The signal "PROJECTOR_2/sig0000002e" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000124" (FF) removed.
+  The signal "PROJECTOR_2/sig0000004f" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000164" (FF) removed.
+    The signal "PROJECTOR_2/sig000000a9" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000144" (FF) removed.
+The signal "PROJECTOR_2/sig0000002d" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000125" (FF) removed.
+  The signal "PROJECTOR_2/sig0000004e" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000165" (FF) removed.
+    The signal "PROJECTOR_2/sig000000a8" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000145" (FF) removed.
+The signal "PROJECTOR_2/sig0000002c" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_2/blk00000126" (FF) removed.
+  The signal "PROJECTOR_2/sig0000004d" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_2/blk00000166" (FF) removed.
+    The signal "PROJECTOR_2/sig000000a7" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_2/blk00000146" (FF) removed.
+The signal "PROJECTOR_1/cosine<7>" is sourceless and has been removed.
+The signal "PROJECTOR_1/cosine<6>" is sourceless and has been removed.
+The signal "PROJECTOR_1/cosine<5>" is sourceless and has been removed.
+The signal "PROJECTOR_1/cosine<4>" is sourceless and has been removed.
+The signal "PROJECTOR_1/cosine<3>" is sourceless and has been removed.
+The signal "PROJECTOR_1/cosine<2>" is sourceless and has been removed.
+The signal "PROJECTOR_1/cosine<1>" is sourceless and has been removed.
+The signal "PROJECTOR_1/cosine<0>" is sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<21>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<20>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<19>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<18>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<17>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<16>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<15>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<14>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<13>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<12>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<11>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<10>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<9>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<8>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<7>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<6>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<5>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<4>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<3>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<2>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<1>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/U0/i_synth/i_phase_out.del/opt_has_pipe.pipe_2<0>" is
+sourceless and has been removed.
+The signal "PROJECTOR_1/sig00000001" is sourceless and has been removed.
+The signal "PROJECTOR_1/sig0000000b" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000023" (SFF) removed.
+  The signal "PROJECTOR_1/sig000000a5" is sourceless and has been removed.
+The signal "PROJECTOR_1/sig0000004c" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000106" (FF) removed.
+  The signal "PROJECTOR_1/sig000000a6" is sourceless and has been removed.
+The signal "PROJECTOR_1/sig00000041" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000111" (FF) removed.
+  The signal "PROJECTOR_1/sig00000062" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000151" (FF) removed.
+    The signal "PROJECTOR_1/sig000000bc" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000131" (FF) removed.
+The signal "PROJECTOR_1/sig00000040" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000112" (FF) removed.
+  The signal "PROJECTOR_1/sig00000061" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000152" (FF) removed.
+    The signal "PROJECTOR_1/sig000000bb" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000132" (FF) removed.
+The signal "PROJECTOR_1/sig0000003f" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000113" (FF) removed.
+  The signal "PROJECTOR_1/sig00000060" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000153" (FF) removed.
+    The signal "PROJECTOR_1/sig000000ba" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000133" (FF) removed.
+The signal "PROJECTOR_1/sig0000003e" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000114" (FF) removed.
+  The signal "PROJECTOR_1/sig0000005f" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000154" (FF) removed.
+    The signal "PROJECTOR_1/sig000000b9" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000134" (FF) removed.
+The signal "PROJECTOR_1/sig0000003d" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000115" (FF) removed.
+  The signal "PROJECTOR_1/sig0000005e" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000155" (FF) removed.
+    The signal "PROJECTOR_1/sig000000b8" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000135" (FF) removed.
+The signal "PROJECTOR_1/sig0000003c" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000116" (FF) removed.
+  The signal "PROJECTOR_1/sig0000005d" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000156" (FF) removed.
+    The signal "PROJECTOR_1/sig000000b7" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000136" (FF) removed.
+The signal "PROJECTOR_1/sig0000003b" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000117" (FF) removed.
+  The signal "PROJECTOR_1/sig0000005c" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000157" (FF) removed.
+    The signal "PROJECTOR_1/sig000000b6" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000137" (FF) removed.
+The signal "PROJECTOR_1/sig0000003a" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000118" (FF) removed.
+  The signal "PROJECTOR_1/sig0000005b" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000158" (FF) removed.
+    The signal "PROJECTOR_1/sig000000b5" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000138" (FF) removed.
+The signal "PROJECTOR_1/sig00000039" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000119" (FF) removed.
+  The signal "PROJECTOR_1/sig0000005a" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000159" (FF) removed.
+    The signal "PROJECTOR_1/sig000000b4" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000139" (FF) removed.
+The signal "PROJECTOR_1/sig00000038" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk0000011a" (FF) removed.
+  The signal "PROJECTOR_1/sig00000059" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk0000015a" (FF) removed.
+    The signal "PROJECTOR_1/sig000000b3" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk0000013a" (FF) removed.
+The signal "PROJECTOR_1/sig00000037" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk0000011b" (FF) removed.
+  The signal "PROJECTOR_1/sig00000058" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk0000015b" (FF) removed.
+    The signal "PROJECTOR_1/sig000000b2" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk0000013b" (FF) removed.
+The signal "PROJECTOR_1/sig00000036" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk0000011c" (FF) removed.
+  The signal "PROJECTOR_1/sig00000057" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk0000015c" (FF) removed.
+    The signal "PROJECTOR_1/sig000000b1" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk0000013c" (FF) removed.
+The signal "PROJECTOR_1/sig00000035" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk0000011d" (FF) removed.
+  The signal "PROJECTOR_1/sig00000056" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk0000015d" (FF) removed.
+    The signal "PROJECTOR_1/sig000000b0" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk0000013d" (FF) removed.
+The signal "PROJECTOR_1/sig00000034" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk0000011e" (FF) removed.
+  The signal "PROJECTOR_1/sig00000055" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk0000015e" (FF) removed.
+    The signal "PROJECTOR_1/sig000000af" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk0000013e" (FF) removed.
+The signal "PROJECTOR_1/sig00000033" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk0000011f" (FF) removed.
+  The signal "PROJECTOR_1/sig00000054" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk0000015f" (FF) removed.
+    The signal "PROJECTOR_1/sig000000ae" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk0000013f" (FF) removed.
+The signal "PROJECTOR_1/sig00000032" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000120" (FF) removed.
+  The signal "PROJECTOR_1/sig00000053" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000160" (FF) removed.
+    The signal "PROJECTOR_1/sig000000ad" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000140" (FF) removed.
+The signal "PROJECTOR_1/sig00000031" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000121" (FF) removed.
+  The signal "PROJECTOR_1/sig00000052" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000161" (FF) removed.
+    The signal "PROJECTOR_1/sig000000ac" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000141" (FF) removed.
+The signal "PROJECTOR_1/sig00000030" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000122" (FF) removed.
+  The signal "PROJECTOR_1/sig00000051" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000162" (FF) removed.
+    The signal "PROJECTOR_1/sig000000ab" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000142" (FF) removed.
+The signal "PROJECTOR_1/sig0000002f" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000123" (FF) removed.
+  The signal "PROJECTOR_1/sig00000050" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000163" (FF) removed.
+    The signal "PROJECTOR_1/sig000000aa" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000143" (FF) removed.
+The signal "PROJECTOR_1/sig0000002e" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000124" (FF) removed.
+  The signal "PROJECTOR_1/sig0000004f" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000164" (FF) removed.
+    The signal "PROJECTOR_1/sig000000a9" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000144" (FF) removed.
+The signal "PROJECTOR_1/sig0000002d" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000125" (FF) removed.
+  The signal "PROJECTOR_1/sig0000004e" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000165" (FF) removed.
+    The signal "PROJECTOR_1/sig000000a8" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000145" (FF) removed.
+The signal "PROJECTOR_1/sig0000002c" is sourceless and has been removed.
+ Sourceless block "PROJECTOR_1/blk00000126" (FF) removed.
+  The signal "PROJECTOR_1/sig0000004d" is sourceless and has been removed.
+   Sourceless block "PROJECTOR_1/blk00000166" (FF) removed.
+    The signal "PROJECTOR_1/sig000000a7" is sourceless and has been removed.
+     Sourceless block "PROJECTOR_1/blk00000146" (FF) removed.
+Unused block "PROJECTOR_1/blk00000001" (ONE) removed.
+Unused block "PROJECTOR_1/blk00000044/blk000000a3" (MUX) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000a8" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000ab" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000ae" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000b1" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000b4" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000b7" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000ba" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000bd" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000c0" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000c3" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000c6" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000c9" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000cc" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000cf" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000d2" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000d5" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000d8" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000db" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000de" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000e1" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000e4" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk000000e7" (XOR) removed.
+Unused block "PROJECTOR_1/blk000000a5/blk00000104" (MUX) removed.
+Unused block "PROJECTOR_1/blk00000167" (RAMB8BWER) removed.
+Unused block "PROJECTOR_2/blk00000001" (ONE) removed.
+Unused block "PROJECTOR_2/blk00000044/blk000000a3" (MUX) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000a8" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000ab" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000ae" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000b1" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000b4" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000b7" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000ba" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000bd" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000c0" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000c3" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000c6" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000c9" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000cc" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000cf" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000d2" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000d5" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000d8" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000db" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000de" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000e1" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000e4" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk000000e7" (XOR) removed.
+Unused block "PROJECTOR_2/blk000000a5/blk00000104" (MUX) removed.
+Unused block "PROJECTOR_2/blk00000167" (RAMB8BWER) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		PROJECTOR_1/blk00000002
+FD 		PROJECTOR_1/blk00000009
+   optimized to 0
+FD 		PROJECTOR_1/blk00000015
+   optimized to 0
+FD 		PROJECTOR_1/blk0000001b
+   optimized to 0
+GND 		PROJECTOR_2/blk00000002
+FD 		PROJECTOR_2/blk00000009
+   optimized to 0
+FD 		PROJECTOR_2/blk00000015
+   optimized to 0
+FD 		PROJECTOR_2/blk0000001b
+   optimized to 0
+GND 		XST_GND
+VCC 		XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CCLK                               | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| CLOCK_EXT                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| CLOCK_IN                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| LED<0>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| LED<1>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| LED<2>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| LED<3>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| LED<4>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| LED<5>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| LED<6>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| LED<7>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| RST_N                              | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| SCL                                | IOB              | OUTPUT    | I2C                  |       |          |      |              |          |          |
+| SDA                                | IOB              | BIDIR     | I2C                  |       |          |      |              |          |          |
+| SPI_MISO                           | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| SPI_MOSI                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| SPI_SCK                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| SPI_SS                             | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| TMDS1_CLOCK_N                      | IOBS             | OUTPUT    | TMDS_33              |       |          |      |              |          |          |
+| TMDS1_CLOCK_P                      | IOBM             | OUTPUT    | TMDS_33              |       |          |      | OSERDES      |          |          |
+| TMDS1_NEGATIVE<0>                  | IOBS             | OUTPUT    | TMDS_33              |       |          |      |              |          |          |
+| TMDS1_NEGATIVE<1>                  | IOBS             | OUTPUT    | TMDS_33              |       |          |      |              |          |          |
+| TMDS1_NEGATIVE<2>                  | IOBS             | OUTPUT    | TMDS_33              |       |          |      |              |          |          |
+| TMDS1_POSITIVE<0>                  | IOBM             | OUTPUT    | TMDS_33              |       |          |      | OSERDES      |          |          |
+| TMDS1_POSITIVE<1>                  | IOBM             | OUTPUT    | TMDS_33              |       |          |      | OSERDES      |          |          |
+| TMDS1_POSITIVE<2>                  | IOBM             | OUTPUT    | TMDS_33              |       |          |      | OSERDES      |          |          |
+| TMDS2_CLOCK_N                      | IOBS             | OUTPUT    | TMDS_33              |       |          |      |              |          |          |
+| TMDS2_CLOCK_P                      | IOBM             | OUTPUT    | TMDS_33              |       |          |      | OSERDES      |          |          |
+| TMDS2_NEGATIVE<0>                  | IOBS             | OUTPUT    | TMDS_33              |       |          |      |              |          |          |
+| TMDS2_NEGATIVE<1>                  | IOBS             | OUTPUT    | TMDS_33              |       |          |      |              |          |          |
+| TMDS2_NEGATIVE<2>                  | IOBS             | OUTPUT    | TMDS_33              |       |          |      |              |          |          |
+| TMDS2_POSITIVE<0>                  | IOBM             | OUTPUT    | TMDS_33              |       |          |      | OSERDES      |          |          |
+| TMDS2_POSITIVE<1>                  | IOBM             | OUTPUT    | TMDS_33              |       |          |      | OSERDES      |          |          |
+| TMDS2_POSITIVE<2>                  | IOBM             | OUTPUT    | TMDS_33              |       |          |      | OSERDES      |          |          |
+| sync_in_1                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| sync_in_2                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| sync_out_1                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| sync_out_2                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

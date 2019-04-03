@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# PlanAhead v14.6
+# Build 269223 by xbuild on Wed Jun  5 11:17:50 MDT 2013
+# Start of session at: Tue Jan 15 13:46:25 2019
+# Process ID: 15552
+# Log file: C:/Users/Ying Yu/Desktop/Mojo_v3/dualpro/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/Ying Yu/Desktop/Mojo_v3/dualpro/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {C:/Users/Ying Yu/Desktop/Mojo_v3/dualpro/pa.fromHdl.tcl}
+update_compile_order -fileset sim_1
+refresh_design
+set_property iostandard LVCMOS33 [get_ports [list CLOCK_EXT]]
+set_property iostandard LVCMOS33 [get_ports [list CLOCK_IN]]
+save_constraints
