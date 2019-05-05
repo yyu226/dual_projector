@@ -1,7 +1,7 @@
 Release 14.6 par P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-BV30EGG::  Fri Mar 29 18:07:10 2019
+DESKTOP-BV30EGG::  Sat Apr 27 10:54:14 2019
 
 par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
 
@@ -26,16 +26,16 @@ Device speed data version:  "PRODUCTION 1.23 2013-06-08".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   598 out of  11,440    5%
-    Number used as Flip Flops:                 589
+  Number of Slice Registers:                   787 out of  11,440    6%
+    Number used as Flip Flops:                 778
     Number used as Latches:                      9
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,102 out of   5,720   19%
-    Number used as logic:                      578 out of   5,720   10%
-      Number using O6 output only:             395
+  Number of Slice LUTs:                      1,301 out of   5,720   22%
+    Number used as logic:                      764 out of   5,720   13%
+      Number using O6 output only:             585
       Number using O5 output only:              64
-      Number using O5 and O6:                  119
+      Number using O5 and O6:                  115
       Number used as ROM:                        0
     Number used as Memory:                     463 out of   1,440   32%
       Number used as Dual Port RAM:            460
@@ -47,18 +47,18 @@ Slice Logic Utilization:
         Number using O6 output only:             3
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:     61
-      Number with same-slice register load:     31
-      Number with same-slice carry load:        30
+    Number used exclusively as route-thrus:     74
+      Number with same-slice register load:     39
+      Number with same-slice carry load:        35
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   354 out of   1,430   24%
-  Number of MUXCYs used:                       236 out of   2,860    8%
-  Number of LUT Flip Flop pairs used:        1,224
-    Number with an unused Flip Flop:           707 out of   1,224   57%
-    Number with an unused LUT:                 122 out of   1,224    9%
-    Number of fully used LUT-FF pairs:         395 out of   1,224   32%
+  Number of occupied Slices:                   440 out of   1,430   30%
+  Number of MUXCYs used:                       364 out of   2,860   12%
+  Number of LUT Flip Flop pairs used:        1,467
+    Number with an unused Flip Flop:           774 out of   1,467   52%
+    Number with an unused LUT:                 166 out of   1,467   11%
+    Number of fully used LUT-FF pairs:         527 out of   1,467   35%
     Number of slice register sites lost
       to control set restrictions:               0 out of  11,440    0%
 
@@ -114,98 +114,98 @@ Router effort level (-rl):    High
 Starting initial Timing Analysis.  REAL time: 3 secs 
 Finished initial Timing Analysis.  REAL time: 3 secs 
 
-WARNING:Par:288 - The signal Mram_lut135_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut141_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut127_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut130_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut131_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut129_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut138_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut133_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut140_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut231_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut122_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut121_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut116_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut119_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut115_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut132_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut232_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut118_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut110_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut120_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut112_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut123_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut137_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut139_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut128_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut126_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut140_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut136_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut134_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut235_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut236_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut34_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut113_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut138_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut141_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut122_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut120_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut112_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut130_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut127_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut132_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut139_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut135_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut133_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut126_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut131_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut110_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut114_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut119_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut116_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut115_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut117_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut214_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut223_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut213_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut225_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut218_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut219_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut230_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut228_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut240_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut234_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut239_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut227_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut18_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut125_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut240_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut137_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut124_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut123_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut113_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut111_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut211_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut121_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut118_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut239_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut229_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut231_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut238_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut228_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut221_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut222_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut213_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut218_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut214_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut18_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut34_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut237_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut233_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut227_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut226_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut236_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut215_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut217_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut210_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut220_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut212_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut224_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut217_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut222_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut215_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut216_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut221_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut238_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut237_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut226_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut229_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut220_RAMD_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal Mram_lut233_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut223_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut211_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut234_RAMD_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal Mram_lut241_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut232_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut230_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut235_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut216_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut219_RAMD_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal Mram_lut225_RAMD_O has no load.  PAR will not attempt to route this signal.
 Starting Router
 
 
-Phase  1  : 6989 unrouted;      REAL time: 3 secs 
+Phase  1  : 7919 unrouted;      REAL time: 3 secs 
 
-Phase  2  : 6165 unrouted;      REAL time: 4 secs 
+Phase  2  : 7001 unrouted;      REAL time: 4 secs 
 
-Phase  3  : 1596 unrouted;      REAL time: 6 secs 
+Phase  3  : 1807 unrouted;      REAL time: 6 secs 
 
-Phase  4  : 1596 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
+Phase  4  : 1806 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
 
 Updating file: top.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 8 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 10 secs 
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 8 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 10 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 8 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 10 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 8 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 10 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 10 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
-Total REAL time to Router completion: 9 secs 
-Total CPU time to Router completion: 9 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 10 secs 
+Total REAL time to Router completion: 10 secs 
+Total CPU time to Router completion: 10 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -225,29 +225,29 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clo | SETUP       |         N/A|     6.941ns|     N/A|           0
-  ck_pix                                    | HOLD        |     0.349ns|            |       0|           0
+  Autotimespec constraint for clock net clo | SETUP       |         N/A|     8.806ns|     N/A|           0
+  ck_pix                                    | HOLD        |     0.302ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net PRO | SETUP       |         N/A|     6.292ns|     N/A|           0
-  GAMMABLE_OSC/clk_400k_BUFG                | HOLD        |     0.412ns|            |       0|           0
+  Autotimespec constraint for clock net PRO | SETUP       |         N/A|     7.592ns|     N/A|           0
+  GAMMABLE_OSC/clk_400k_BUFG                | HOLD        |     0.413ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net HDM | SETUP       |         N/A|     2.765ns|     N/A|           0
-  I_TIMING/syncH_BUFG                       | HOLD        |     0.439ns|            |       0|           0
+  Autotimespec constraint for clock net gcl | SETUP       |         N/A|     3.206ns|     N/A|           0
+  k                                         | HOLD        |     0.325ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net CLK | SETUP       |         N/A|     6.424ns|     N/A|           0
-  _50M                                      | HOLD        |     0.332ns|            |       0|           0
+  Autotimespec constraint for clock net CLK | SETUP       |         N/A|     5.464ns|     N/A|           0
+  _50M                                      | HOLD        |     0.368ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net gcl | SETUP       |         N/A|     3.104ns|     N/A|           0
-  k                                         | HOLD        |     0.418ns|            |       0|           0
-----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net PRO | SETUP       |         N/A|     4.920ns|     N/A|           0
-  GAMMABLE_OSC/clk_40m                      | HOLD        |     0.408ns|            |       0|           0
+  Autotimespec constraint for clock net PRO | SETUP       |         N/A|     4.468ns|     N/A|           0
+  GAMMABLE_OSC/clk_40m                      | HOLD        |     0.407ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
   Autotimespec constraint for clock net SYN | SETUP       |         N/A|     1.169ns|     N/A|           0
   C_VS                                      | HOLD        |     0.670ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net HDM | SETUP       |         N/A|     5.062ns|     N/A|           0
-  I_TIMING/syncV                            | HOLD        |     0.535ns|            |       0|           0
+  Autotimespec constraint for clock net HDM | SETUP       |         N/A|     5.519ns|     N/A|           0
+  I_TIMING/syncV                            | HOLD        |     0.398ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net HDM | SETUP       |         N/A|     2.736ns|     N/A|           0
+  I_TIMING/syncH_BUFG                       | HOLD        |     0.455ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -265,10 +265,10 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 66 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 9 secs 
-Total CPU time to PAR completion: 9 secs 
+Total REAL time to PAR completion: 10 secs 
+Total CPU time to PAR completion: 10 secs 
 
-Peak Memory Usage:  4587 MB
+Peak Memory Usage:  4589 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

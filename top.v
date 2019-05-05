@@ -66,11 +66,12 @@ reg [7:0] lut [0:1023];
 reg [10:0] m;
 
 reg [31:0] phsr1, phsr2;
+reg [31:0] phsr1LR, phsr2LR;
 reg projector;
 reg [7:0] co_n;
 reg [7:0] co_K;
 reg [7:0] frame;
-reg [31:0] phase_inc;
+reg [31:0] phase_inc, phase_inc_LR;
 reg [31:0] phase_off_8;
 reg sync_out_2r;
 reg srst;
@@ -83,11 +84,13 @@ initial
 begin
 	m = 0;	
 	phsr1 = 0; phsr2 = 0;
+	phsr1LR = 0; phsr2LR = 0;
 	projector = 0;
 	co_n = 0;
 	co_K = 0;
 	frame = 0;
 	phase_inc = 0;
+	phase_inc_LR = 0;
 	phase_off_8 = 0;
 	sync_out_2r = 0;
 	srst = 0;
@@ -203,9 +206,9 @@ dvi_encoder_top PORT_1 (
     .pclkx10     (clock_tmds),
     .serdesstrobe(serdes),
     .rstin       (~bufpll_lock),
-    .blue_din    (0),
-    .green_din   (pdata1),
-    .red_din     (0),
+    .blue_din    (pdata1),
+    .green_din   (0),
+    .red_din     (pdata1),
     .hsync       (SYNC_HS),
     .vsync       (SYNC_VS),
     .de          (DE),
@@ -219,9 +222,9 @@ dvi_encoder_top PORT_2 (
     .pclkx10     (clock_tmds),
     .serdesstrobe(serdes),
     .rstin       (~bufpll_lock),
-    .blue_din    (0),
-    .green_din   (pdata2),
-    .red_din     (0),
+    .blue_din    (pdata2),
+    .green_din   (0),
+    .red_din     (pdata2),
     .hsync       (SYNC_HS),
     .vsync       (SYNC_VS),
     .de          (DE),
@@ -293,6 +296,7 @@ end
 wire [31:0] phase_i1, phase_i2;
 wire [31:0] phase_o1, phase_o2;
 wire [31:0] pout1, pout2;
+wire [31:0] pout1_lr, pout2_lr;
 ddsc PROJECTOR_1(
 			.clk				(SYNC_HS),
 			.sclr				((!hdmi_start) || (!goo)),
@@ -312,13 +316,32 @@ ddsc PROJECTOR_2(
 			.cosine			(),
 			.phase_out		(pout2)
 );
-assign pdata1 = lut[pout1[31:22]];
-assign pdata2 = lut[pout2[31:22]];
+/***************************************************/
+ddsc PROJECTOR_1LR(
+			.clk				(clock_pix),
+			.sclr				((!hdmi_start) || (!DE)),
+			
+			.pinc_in			(phase_i1),
+			.poff_in			(phase_o1),
+			.cosine			(),
+			.phase_out		(pout1_lr)
+);
+ddsc PROJECTOR_2LR(
+			.clk				(clock_pix),
+			.sclr				((!hdmi_start) || (!DE)),
+			
+			.pinc_in			(phase_i2),
+			.poff_in			(phase_o2),
+			.cosine			(),
+			.phase_out		(pout2_lr)
+);
+assign pdata1 = (frame < 28) ? lut[pout1[31:22]] : lut[pout1_lr[31:22]];
+assign pdata2 = (frame < 28) ? lut[pout2[31:22]] : lut[pout2_lr[31:22]];
 
 `ifdef CALIB				//select this macro when calibrating
 wire wrst;
 
-always@(posedge wrst)
+always@(*)
 begin
 	begin
 		case(frame)								//[0,23); [24, 623]; [624, 648)
@@ -434,6 +457,115 @@ begin
 	end
 end
 
+always@(*)
+begin
+		case(frame)
+			//f = 1
+			28: begin
+					 phsr1LR = 32'd357913941;
+					 phsr2LR = 32'd357913941;
+				 end
+		   29: begin
+					 phsr1LR = 32'd894784853;
+					 phsr2LR = 32'd1431655765;
+				 end
+		   30: begin
+					 phsr1LR = 32'd1431655765;
+					 phsr2LR = 32'd2505397589;
+				 end
+		   31: begin
+					 phsr1LR = 32'd1968526677;
+					 phsr2LR = 32'd3579139413;
+				 end
+			32: begin
+					 phsr1LR = 32'd2505397589;
+					 phsr2LR = 32'd357913941;
+				 end
+		   33: begin
+					 phsr1LR = 32'd3042268501;
+					 phsr2LR = 32'd1431655765;
+				 end
+		   34: begin
+					 phsr1LR = 32'd3579139413;
+					 phsr2LR = 32'd2505397589;
+				 end
+		   35: begin
+					 phsr1LR = 32'd4116010325;
+					 phsr2LR = 32'd3579139413;
+				 end
+			//f = 6
+			36: begin
+					 phsr1LR = 32'd2147483648;
+					 phsr2LR = 32'd2147483648;
+				 end
+		   37: begin
+					 phsr1LR = 32'd2684354560;
+					 phsr2LR = 32'd3221225472;
+				 end
+		   38: begin
+					 phsr1LR = 32'd3221225472;
+					 phsr2LR = 32'd0;
+				 end
+		   39: begin
+					 phsr1LR = 32'd3758096384;
+					 phsr2LR = 32'd1073741824;
+				 end
+			40: begin
+					 phsr1LR = 32'd0;
+					 phsr2LR = 32'd2147483648;
+				 end
+		   41: begin
+					 phsr1LR = 32'd5368870912;
+					 phsr2LR = 32'd3221225472;
+				 end
+		   42: begin
+					 phsr1LR = 32'd1073741824;
+					 phsr2LR = 32'd0;
+				 end
+		   43: begin
+					 phsr1LR = 32'd1610612736;
+					 phsr2LR = 32'd1073741824;
+				 end
+			//f = 36
+			44: begin
+					 phsr1LR = 32'd0;
+					 phsr2LR = 32'd0;
+				 end
+		   45: begin
+					 phsr1LR = 32'd536870912;
+					 phsr2LR = 32'd1073741824;
+				 end
+		   46: begin
+					 phsr1LR = 32'd1073741824;
+					 phsr2LR = 32'd2147483648;
+				 end
+		   47: begin
+					 phsr1LR = 32'd1610612736;
+					 phsr2LR = 32'd3221225472;
+				 end
+			48: begin
+					 phsr1LR = 32'd2147483648;
+					 phsr2LR = 32'd0;
+				 end
+		   49: begin
+					 phsr1LR = 32'd2684354560;
+					 phsr2LR = 32'd1073741824;
+				 end
+		   50: begin
+					 phsr1LR = 32'd3221225472;
+					 phsr2LR = 32'd2147483648;
+				 end
+		   51: begin
+					 phsr1LR = 32'd3758096384;
+					 phsr2LR = 32'd3221225472;
+				 end
+			default: begin
+					      phsr1LR = 32'd0;
+							phsr2LR = 32'd0;
+					   end
+		endcase
+end
+
 always@(frame)
 begin
 	if(frame<28)
@@ -452,17 +584,29 @@ end
 always@(frame)
 begin
 		case(co_K)
-		  1: phase_inc = 32'd6628036;				//2^32 / 648 (1 wave length across 648 rows)
-		  2: phase_inc = 32'd39768216;			//2^32 / 108 (6 wave lengths)
-		  3: phase_inc = 32'd238609294;			//2^32 / 18  (36 wave lengths)
-		  default: phase_inc = 32'd0;
+		  1: begin
+				  phase_inc = 32'd6628036;				//2^32 / 648 (1 wave length across 648 rows)
+				  phase_inc_LR = 32'd4473924;
+			  end
+		  2: begin
+				  phase_inc = 32'd39768216;			//2^32 / 108 (6 wave lengths)
+				  phase_inc_LR = 32'd26843546;
+			  end
+		  3: begin
+				  phase_inc = 32'd238609294;			//2^32 / 18  (36 wave lengths)
+			     phase_inc_LR = 32'd161061274;
+			  end
+		  default: begin
+						  phase_inc = 32'd0;
+						  phase_inc_LR = 32'd0;
+					  end
 		endcase
 end
 /********************* Add 8 new frames **************************/
-assign phase_i1 = (frame < 24) ? phase_inc : 32'd0;
-assign phase_i2 = (frame < 24) ? phase_inc : 32'd0;
-assign phase_o1 = (frame < 24) ? phsr1 : phase_off_8;
-assign phase_o2 = (frame < 24) ? phsr2 : phase_off_8;
+assign phase_i1 = (frame < 24) ? phase_inc : (((frame > 27) && (frame < 52)) ? phase_inc_LR : 32'd0);
+assign phase_i2 = (frame < 24) ? phase_inc : (((frame > 27) && (frame < 52)) ? phase_inc_LR : 32'd0);
+assign phase_o1 = (frame < 24) ? phsr1 : (((frame > 27) && (frame < 52)) ? phsr1LR : phase_off_8);
+assign phase_o2 = (frame < 24) ? phsr2 : (((frame > 27) && (frame < 52)) ? phsr2LR : phase_off_8);
 
 always@(frame)
 begin
@@ -477,7 +621,7 @@ end
 always@(negedge SYNC_VS or negedge sync_in_1)
 begin
 	   if(!sync_in_1) begin
-			frame = 27;
+			frame = 55;
 			projector = 0;
 		end
 		else if(sync_in_2)
@@ -485,7 +629,7 @@ begin
 				if((delay_st==2'b11)||(delay_st==2'b10))				//before was: if(delay_st==2'b11)
 				begin
 					projector = 1;
-					if(frame<27)
+					if(frame<55)
 						frame = frame + 1;
 					else
 						frame = 0;

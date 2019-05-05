@@ -10,7 +10,7 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Fri Mar 29 18:06:51 2019
+Mapped Date    : Sat Apr 27 10:53:35 2019
 
 Mapping design into LUTs...
 Running directed packing...
@@ -19,17 +19,18 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 10 secs 
-Total CPU  time at the beginning of Placer: 4 secs 
+Total REAL time at the beginning of Placer: 11 secs 
+Total CPU  time at the beginning of Placer: 5 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:f8ebe229) REAL time: 10 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:2b4223a0) REAL time: 12 secs 
 
 Phase 2.7  Design Feasibility Check
 WARNING:Place:1137 - This design is not guaranteed to be routable! This design
    contains a global buffer instance, <startbufg>, driving the net,
    <hdmi_start>, that is driving the following (first 30) non-clock load pins.
-   < PIN: hdmi_start_goo_OR_86_o1.A4; >
+   < PIN: hdmi_start_goo_OR_86_o.A6; >
+   < PIN: hdmi_start_DE_OR_88_o1.A5; >
    This is not a recommended design practice in Spartan-6 due to limitations in
    the global routing that may cause excessive delay, skew or unroutable
    situations.  It is recommended to only use a BUFG resource to drive clock
@@ -38,186 +39,183 @@ WARNING:Place:1137 - This design is not guaranteed to be routable! This design
    CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN <startbufg.O>
    allowing your design to continue. This constraint disables all clock placer
    rules related to the specified COMP.PIN.
-Phase 2.7  Design Feasibility Check (Checksum:f8ebe229) REAL time: 11 secs 
+Phase 2.7  Design Feasibility Check (Checksum:2b4223a0) REAL time: 12 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:f8ebe229) REAL time: 11 secs 
+Phase 3.31  Local Placement Optimization (Checksum:2b4223a0) REAL time: 12 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:60f27601) REAL time: 13 secs 
+(Checksum:24631d60) REAL time: 15 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:60f27601) REAL time: 13 secs 
+Phase 5.36  Local Placement Optimization (Checksum:24631d60) REAL time: 15 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:60f27601) REAL time: 13 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:24631d60) REAL time: 15 secs 
 
 Phase 7.3  Local Placement Optimization
-Phase 7.3  Local Placement Optimization (Checksum:60f27601) REAL time: 13 secs 
+Phase 7.3  Local Placement Optimization (Checksum:24631d60) REAL time: 15 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:60f27601) REAL time: 13 secs 
+Phase 8.5  Local Placement Optimization (Checksum:24631d60) REAL time: 15 secs 
 
 Phase 9.8  Global Placement
-.................................
-....................................................................
-Phase 9.8  Global Placement (Checksum:e11ee89) REAL time: 14 secs 
+...............................................................
+.................................................................
+Phase 9.8  Global Placement (Checksum:dfc60917) REAL time: 16 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:e11ee89) REAL time: 14 secs 
+Phase 10.5  Local Placement Optimization (Checksum:dfc60917) REAL time: 16 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:ef99e9d1) REAL time: 15 secs 
+Phase 11.18  Placement Optimization (Checksum:2dd075bf) REAL time: 35 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:ef99e9d1) REAL time: 15 secs 
+Phase 12.5  Local Placement Optimization (Checksum:2dd075bf) REAL time: 35 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:b5911a0c) REAL time: 15 secs 
+Phase 13.34  Placement Validation (Checksum:e76bc3c2) REAL time: 35 secs 
 
-Total REAL time to Placer completion: 15 secs 
-Total CPU  time to Placer completion: 9 secs 
+Total REAL time to Placer completion: 35 secs 
+Total CPU  time to Placer completion: 29 secs 
 Running post-placement packing...
 Writing output files...
-WARNING:PhysDesignRules:372 - Gated clock. Clock net goo is sourced by a
-   combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net SYNC_VS is sourced by a
    combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut135_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut141_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut127_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut130_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut131_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut129_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut138_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut133_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut140_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut231_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut122_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut121_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut116_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut119_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut115_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut132_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut232_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut118_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut110_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut120_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut112_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut123_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut137_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut139_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut128_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut126_RAMD_O> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <Mram_lut140_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut136_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut134_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut235_RAMD_O> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <Mram_lut138_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut236_RAMD_O> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <Mram_lut141_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut34_RAMD_O> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <Mram_lut122_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut113_RAMD_O> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <Mram_lut120_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut112_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut130_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut127_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut132_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut139_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut135_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut133_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut126_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut131_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut110_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut114_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut119_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut116_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut115_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut117_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut214_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut223_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut213_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut225_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut218_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut219_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut230_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut228_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut240_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut234_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut239_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut227_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut18_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut125_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut240_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut137_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut124_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut123_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut113_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut111_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut211_RAMD_O> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <Mram_lut121_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut118_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut239_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut229_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut231_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut238_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut228_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut221_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut222_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut213_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut218_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut214_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut18_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut34_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut237_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut233_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut227_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut226_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut236_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut215_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut217_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut210_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut220_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut212_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut224_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut217_RAMD_O> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <Mram_lut223_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut222_RAMD_O> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <Mram_lut211_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut215_RAMD_O> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <Mram_lut234_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut241_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut232_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut230_RAMD_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <Mram_lut235_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <Mram_lut216_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut221_RAMD_O> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <Mram_lut219_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut238_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut237_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut226_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut229_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut220_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut233_RAMD_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <Mram_lut241_RAMD_O> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <Mram_lut225_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 
 Design Summary
@@ -225,18 +223,18 @@ Design Summary
 
 Design Summary:
 Number of errors:      0
-Number of warnings:   69
+Number of warnings:   68
 Slice Logic Utilization:
-  Number of Slice Registers:                   598 out of  11,440    5%
-    Number used as Flip Flops:                 589
+  Number of Slice Registers:                   787 out of  11,440    6%
+    Number used as Flip Flops:                 778
     Number used as Latches:                      9
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,102 out of   5,720   19%
-    Number used as logic:                      578 out of   5,720   10%
-      Number using O6 output only:             395
+  Number of Slice LUTs:                      1,301 out of   5,720   22%
+    Number used as logic:                      764 out of   5,720   13%
+      Number using O6 output only:             585
       Number using O5 output only:              64
-      Number using O5 and O6:                  119
+      Number using O5 and O6:                  115
       Number used as ROM:                        0
     Number used as Memory:                     463 out of   1,440   32%
       Number used as Dual Port RAM:            460
@@ -248,21 +246,21 @@ Slice Logic Utilization:
         Number using O6 output only:             3
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:     61
-      Number with same-slice register load:     31
-      Number with same-slice carry load:        30
+    Number used exclusively as route-thrus:     74
+      Number with same-slice register load:     39
+      Number with same-slice carry load:        35
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   354 out of   1,430   24%
-  Number of MUXCYs used:                       236 out of   2,860    8%
-  Number of LUT Flip Flop pairs used:        1,224
-    Number with an unused Flip Flop:           707 out of   1,224   57%
-    Number with an unused LUT:                 122 out of   1,224    9%
-    Number of fully used LUT-FF pairs:         395 out of   1,224   32%
+  Number of occupied Slices:                   440 out of   1,430   30%
+  Number of MUXCYs used:                       364 out of   2,860   12%
+  Number of LUT Flip Flop pairs used:        1,467
+    Number with an unused Flip Flop:           774 out of   1,467   52%
+    Number with an unused LUT:                 166 out of   1,467   11%
+    Number of fully used LUT-FF pairs:         527 out of   1,467   35%
     Number of unique control sets:              62
     Number of slice register sites lost
-      to control set restrictions:             195 out of  11,440    1%
+      to control set restrictions:             190 out of  11,440    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -309,11 +307,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                4.66
+Average Fanout of Non-Clock Nets:                4.45
 
-Peak Memory Usage:  4616 MB
-Total REAL time to MAP completion:  16 secs 
-Total CPU time to MAP completion:   10 secs 
+Peak Memory Usage:  4619 MB
+Total REAL time to MAP completion:  36 secs 
+Total CPU time to MAP completion:   30 secs 
 
 Mapping completed.
 See MAP report file "top_map.mrp" for details.

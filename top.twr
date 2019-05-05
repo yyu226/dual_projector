@@ -36,11 +36,11 @@ Setup/Hold to clock CLOCK_IN
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-CCLK        |    4.774(R)|      SLOW  |   -1.430(R)|      FAST  |CLK_50M           |   0.000|
-RST_N       |    3.544(R)|      SLOW  |   -0.830(R)|      FAST  |CLK_50M           |   0.000|
-SPI_MOSI    |    2.510(R)|      SLOW  |   -0.835(R)|      FAST  |CLK_50M           |   0.000|
-SPI_SCK     |    2.814(R)|      SLOW  |   -1.006(R)|      FAST  |CLK_50M           |   0.000|
-SPI_SS      |    2.855(R)|      SLOW  |   -1.057(R)|      FAST  |CLK_50M           |   0.000|
+CCLK        |    4.447(R)|      SLOW  |   -1.230(R)|      FAST  |CLK_50M           |   0.000|
+RST_N       |    3.558(R)|      SLOW  |   -1.124(R)|      FAST  |CLK_50M           |   0.000|
+SPI_MOSI    |    2.946(R)|      SLOW  |   -1.093(R)|      FAST  |CLK_50M           |   0.000|
+SPI_SCK     |    2.815(R)|      SLOW  |   -1.030(R)|      FAST  |CLK_50M           |   0.000|
+SPI_SS      |    2.697(R)|      SLOW  |   -0.939(R)|      FAST  |CLK_50M           |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock CLOCK_EXT to Pad
@@ -64,7 +64,7 @@ TMDS2_NEGATIVE<2>|        10.701(R)|      SLOW  |         5.943(R)|      FAST  |
 TMDS2_POSITIVE<0>|        10.659(R)|      SLOW  |         5.927(R)|      FAST  |clock_tmds        |   0.000|
 TMDS2_POSITIVE<1>|        10.710(R)|      SLOW  |         5.978(R)|      FAST  |clock_tmds        |   0.000|
 TMDS2_POSITIVE<2>|        10.659(R)|      SLOW  |         5.927(R)|      FAST  |clock_tmds        |   0.000|
-sync_out_1       |        13.841(R)|      SLOW  |         8.085(R)|      FAST  |clock_pix         |   0.000|
+sync_out_1       |        14.283(R)|      SLOW  |         8.303(R)|      FAST  |clock_pix         |   0.000|
 -----------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock CLOCK_IN to Pad
@@ -72,16 +72,16 @@ Clock CLOCK_IN to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                       | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)      | Phase  |
 ------------+-----------------+------------+-----------------+------------+-----------------------+--------+
-LED<0>      |         5.929(R)|      SLOW  |         3.401(R)|      FAST  |CLK_50M                |   0.000|
-LED<1>      |         6.069(R)|      SLOW  |         3.472(R)|      FAST  |CLK_50M                |   0.000|
-LED<2>      |         6.088(R)|      SLOW  |         3.457(R)|      FAST  |CLK_50M                |   0.000|
-LED<3>      |         6.279(R)|      SLOW  |         3.649(R)|      FAST  |CLK_50M                |   0.000|
-LED<4>      |         6.039(R)|      SLOW  |         3.476(R)|      FAST  |CLK_50M                |   0.000|
-LED<5>      |         6.223(R)|      SLOW  |         3.606(R)|      FAST  |CLK_50M                |   0.000|
-LED<6>      |         6.821(R)|      SLOW  |         3.998(R)|      FAST  |CLK_50M                |   0.000|
-LED<7>      |         6.868(R)|      SLOW  |         3.940(R)|      FAST  |CLK_50M                |   0.000|
-SCL         |        17.605(R)|      SLOW  |        12.961(R)|      FAST  |PROGAMMABLE_OSC/clk_40m|   0.000|
-SPI_MISO    |         7.194(R)|      SLOW  |         3.664(R)|      FAST  |CLK_50M                |   0.000|
+LED<0>      |         6.089(R)|      SLOW  |         3.497(R)|      FAST  |CLK_50M                |   0.000|
+LED<1>      |         6.149(R)|      SLOW  |         3.522(R)|      FAST  |CLK_50M                |   0.000|
+LED<2>      |         6.116(R)|      SLOW  |         3.473(R)|      FAST  |CLK_50M                |   0.000|
+LED<3>      |         6.040(R)|      SLOW  |         3.448(R)|      FAST  |CLK_50M                |   0.000|
+LED<4>      |         6.244(R)|      SLOW  |         3.681(R)|      FAST  |CLK_50M                |   0.000|
+LED<5>      |         6.428(R)|      SLOW  |         3.811(R)|      FAST  |CLK_50M                |   0.000|
+LED<6>      |         6.149(R)|      SLOW  |         3.522(R)|      FAST  |CLK_50M                |   0.000|
+LED<7>      |         6.254(R)|      SLOW  |         3.583(R)|      FAST  |CLK_50M                |   0.000|
+SCL         |        17.128(R)|      SLOW  |        12.742(R)|      FAST  |PROGAMMABLE_OSC/clk_40m|   0.000|
+SPI_MISO    |         7.555(R)|      SLOW  |         3.787(R)|      FAST  |CLK_50M                |   0.000|
 ------------+-----------------+------------+-----------------+------------+-----------------------+--------+
 
 Clock sync_in_1 to Pad
@@ -89,7 +89,7 @@ Clock sync_in_1 to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                   | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)  | Phase  |
 ------------+-----------------+------------+-----------------+------------+-------------------+--------+
-sync_out_2  |         9.666(R)|      SLOW  |         5.429(R)|      FAST  |sync_in_1_IBUF_BUFG|   0.000|
+sync_out_2  |        10.562(R)|      SLOW  |         5.616(R)|      FAST  |sync_in_1_IBUF_BUFG|   0.000|
 ------------+-----------------+------------+-----------------+------------+-------------------+--------+
 
 Clock to Setup on destination clock CLOCK_EXT
@@ -97,8 +97,9 @@ Clock to Setup on destination clock CLOCK_EXT
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_EXT      |    6.941|    6.344|         |         |
-CLOCK_IN       |    2.571|         |         |         |
+CLOCK_EXT      |    8.806|    5.571|         |         |
+CLOCK_IN       |    4.268|         |         |         |
+sync_in_1      |   11.605|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock CLOCK_IN
@@ -106,18 +107,18 @@ Clock to Setup on destination clock CLOCK_IN
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_IN       |    6.424|         |         |         |
+CLOCK_IN       |    5.464|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-SPI_SS         |SPI_MISO       |    8.506|
+SPI_SS         |SPI_MISO       |    8.550|
 ---------------+---------------+---------+
 
 
-Analysis completed Fri Mar 29 18:07:25 2019 
+Analysis completed Sat Apr 27 10:54:31 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:
